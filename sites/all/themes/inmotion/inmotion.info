@@ -1,0 +1,34 @@
+name = inmotion
+description = inmotion Custom
+core = 7.x
+
+scripts[] = js/background-size.js
+scripts[] = js/nav-scroll.js
+scripts[] = js/banner-slider.js
+scripts[] = js/facility-slider.js
+scripts[] = js/testimonials-slider.js
+scripts[] = js/team-slider.js
+scripts[] = js/client-slider.js
+scripts[] = js/map.js
+scripts[] = js/mobile-menu.js
+scripts[] = js/form-validation.js
+scripts[] = swipebox-master/js/jquery.swipebox.js
+
+
+stylesheets[all][] = stylesheets/screen.css
+stylesheets[all][] = css/screen.css
+stylesheets[all][] = swipebox-master/css/swipebox.min.css
+
+
+regions[navigation] = Navigation
+regions[header] = Header
+regions[help] = Help
+regions[content] = Content
+regions[banner] = Banner
+regions[bottom-region] = Front bottom region
+regions[sidebar] = Sidebar
+regions[widgets] = Widgets
+regions[footer2] = Footer2
+regions[footer] = Footer
+
+
