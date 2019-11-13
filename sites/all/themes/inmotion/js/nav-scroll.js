@@ -2,9 +2,14 @@
   
 
   $(function()
-  {    
+  {   
 
-
+     $("#services").parent().find('ul li > a').each(function (index) 
+    {  
+        var val=$(this).text().replace(/\W+/g,'');
+        $(this).attr("href","/services#"+val);
+    });
+    
     $("#block-taxonomy-menu-block-1 .content  ul li a").each(function (index)
     {  
       var val=$(this).text().replace(/\W+/g,'');
@@ -34,38 +39,36 @@
     $(".view-home-services-block .views-row a,#services-symptoms .views-row a,.menu-footer-menu ul li a").each(function (index) 
     {  
         var val=$(this).text().replace(/\W+/g,'');
-        $(this).attr("href","services#"+val);
+        $(this).attr("href","/services#"+val);
         $(this).removeClass("active");            
         $(this).parents('.views-row').addClass(val);  
     });
 
-    $("#services-block-inner .views-row a").each(function (index) 
+    $("#block-views-services-menu-inner-block .views-row a").each(function (index) 
     { 
         var val=$(this).text().replace(/\W+/g,'');
         $(this).attr("href","#"+val);
     });
 
+   
+  
     $(".view-what-your-symptoms .views-row a,").each(function (index) 
     {  
         var val=$(this).text().replace(/\W+/g,'');
         $(this).attr("href","/services#"+val);
     });
 
-    $("#services").parent().find('ul li > a').each(function (index) 
-    {  
-        var val=$(this).text().replace(/\W+/g,'');
-        $(this).attr("href","/services#"+val);
-    });
-      
+
+   
 
       var lastId,
       topMenu = $("#block-taxonomy-menu-block-1 .content ul"),
     
       menuItems = topMenu.find("a"),
       scrollItems = menuItems.map(function(){
-        var item = $($(this).attr("href"));
-        if (item.length) { 
-        return item; }
+      var item = $($(this).attr("href"));
+      if (item.length) { 
+      return item; }
       });
 
       $('#services-block-inner .views-row a').click(function(){
@@ -75,26 +78,62 @@
 
       });
 
-      $('#block-taxonomy-menu-block-1 a[href^="#"],#services-block-inner .views-row a').on('click',function (e) 
-      {
-          e.preventDefault();
+
+    
+      if(window.location.href.indexOf("services") > 0)
+      {     
+          if(window.location.hash)
+          { 
+             var target = window.location.hash;
+              console.log('clicked');
+              var $target = $(target);
+
+              $('html, body').stop().animate({
+                'scrollTop': $target.offset().top-180
+              }, 150);
+           }  
+      }
+
+
+    
+
+      $('#services').parent('li.expanded').find(' > ul.menu a').on('click',scrolling);
+      
+
+      function scrolling()
+      {   
           var target = this.hash;
+          
           var $target = $(target);
           $('html, body').stop().animate({
-            'scrollTop': $target.offset().top-260
-          }, 150, 'swing', function () {
-             window.location.hash = target;
-          });
-      });
+            'scrollTop': $target.offset().top-180
+          }, 150); 
+      }
+       
+   if(window.location.href.indexOf("services") > 0)
+    { 
 
+        $('#block-taxonomy-menu-block-1 a[href^="#"],.views-row a,#scroll-top-button,#block-views-services-menu-inner-block a,.menu-footer-menu ul li a').on('click',scrolling);
+      
+     
       $(window).scroll(function ()
-      {
-       var fromTop = $(this).scrollTop();
-       var cur = scrollItems.map(function()
-       {
-          if ($(this).offset().top - 290< fromTop)
-          return this;   
-       });
+      { 
+
+         var fromTop = $(this).scrollTop();
+         var cur = scrollItems.map(function()
+         {
+            if ($(this).offset().top - 250< fromTop)
+            return this;   
+         });
+
+        if($('#content').offset().top - 400< fromTop)
+        {
+          $("#block-taxonomy-menu-block-1").pin({
+
+            containerSelector: "#content"
+          });
+        }
+     
 
        cur = cur[cur.length-1];
        var id = cur && cur.length ? cur[0].id : "";
@@ -121,50 +160,61 @@
 
             menuItems.filter("[href=#"+id+"]").parents('li.pointer > a').addClass("active");
             menuItems.filter("[href=#"+id+"]").addClass("active");
-
+             var height = $('#block-taxonomy-menu-block-1').height() + 'px';
         }      
 
         var length = $('#sidebar').height() - $('#block-taxonomy-menu-block-1').height() + $('#sidebar').offset().top;   
         var scroll = $(this).scrollTop();
         var t=scroll-$('#content').offset().top;
-        var height = $('#block-taxonomy-menu-block-1').height() + 'px';
-        if (scroll+300 < $('#sidebar').offset().top) {
+        var d=scroll - $('#footer').offset().top;
+      
+         if (scroll+220 < $('#sidebar').offset().top || scroll > $('#footer2').offset().top-200)
+         {  
+            if(window.location.href.indexOf("services") > 0)
+            {
+              $('#header').css({
+                  'position': 'absolute'
+              });
+              $('#header').css('background','rgba(0,0,0,0.6)');   
+            }   
+          } 
 
+         else if(scroll < length) {
 
-            $('#block-taxonomy-menu-block-1').css({
-                'position': 'absolute',
-                'top': '0'
-            });
-            $('#services-block-inner').css({
-                'position': 'relative',
-                'width':'100%',
-                'top': 'auto',
-                'padding-bottom': '0px'
-            });
-
-        } else if (scroll > length-260) {
-            $('#block-taxonomy-menu-block-1').css({
-                'position': 'absolute',
-                'bottom': '0',
-                'top': 'auto',
-                'height':'auto'
-            });
-
+           if(window.location.href.indexOf("services") > 0)
+            {
+              $('#header').css({
+                  'position': 'fixed',
+                  'top':0
+              });
+              $('#header').css('background','rgba(0,0,0,1)');  
+            }    
         }
-         else {
-
-            $('#block-taxonomy-menu-block-1').css({
-                'position': 'fixed',
-                'top': '260px'
-                
-            });
-            $('#services-block-inner').css({
-                'position': 'fixed',
-                'width':'100%',
-                'top': '0px',
-                'padding-bottom': '70px'
-            });
-        }
+    
     });
+}
+    
+    if(window.location.href.indexOf('services') > 0 )
+    {  
+        
+       $('#content').append('<div id="scroll-top-button"><a href="#" class="button">Scroll To Top</a></p></div>');
+      $(window).scroll(function(){
+      if ($(this).scrollTop() > 100) {
+        $('#scroll-top-button').fadeIn();
+      } else {
+        $('#scroll-top-button').fadeOut();
+      }
+  });
+  
+  //Click event to scroll to top
+  $('#scroll-top-button').click(function(){
+    $('html, body').animate({scrollTop : 0},800);
+    return false;
+  });
+        
+    }
+
+   
+  
   });
 }(jQuery));

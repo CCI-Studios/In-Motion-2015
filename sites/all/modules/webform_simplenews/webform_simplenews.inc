@@ -136,7 +136,7 @@ function _webform_render_newsletter_email($component, $value = NULL, $filter = T
 
   $news_vid = $component['extra']['news_vid'];
 
-  if (count($news_vid) > 1 && $component['extra']['individual_newsletter_selection']) {
+  if (count($news_vid) > 0 || $component['extra']['individual_newsletter_selection']) {
     $options = array();
     foreach (taxonomy_get_tree(variable_get('simplenews_vid', '')) as $newsletter) {
       if ($news_vid[$newsletter->tid] != 0) {

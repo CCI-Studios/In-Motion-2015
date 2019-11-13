@@ -5,13 +5,14 @@ core = 7.x
 scripts[] = js/background-size.js
 scripts[] = js/nav-scroll.js
 scripts[] = js/banner-slider.js
-scripts[] = js/facility-slider.js
-scripts[] = js/testimonials-slider.js
 scripts[] = js/team-slider.js
 scripts[] = js/client-slider.js
 scripts[] = js/map.js
 scripts[] = js/mobile-menu.js
+scripts[] = js/pin.js
 scripts[] = js/form-validation.js
+scripts[] = js/scrollupmenu.js
+
 scripts[] = swipebox-master/js/jquery.swipebox.js
 
 

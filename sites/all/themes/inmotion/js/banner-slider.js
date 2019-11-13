@@ -1,33 +1,42 @@
 (function($) {
-	var active = 0;
-	var min = 0;
-	var max = 0;
-	var timer;
+	
 
-	$(function()
-	{
-		init();	
-		
-	});
+	$.fn.slider=function(data){
+	
+	var active=0;
+	var min=0;
+	var max=0;
 
-	function init()
-	{
-		
-		$(".prev").click(clickPrevious);
-		$(".next").click(clickNext);
-		$(".view-home-slider .views-row").click(stop);
-		max = rows().length;
+	var timer=0;
+	var ele = this;
+ 	
+	
+	this.find('.views-row').css({'float':'left','text-align':'center'});
+	this.find('.view-content').css({'position':'relative'});
+	this.css({'overflow':'hidden'});
+	console.log(ele);
+	this.find(".prev").click(function(){clickPrevious(num)});
+	this.find('.next').click(clickNext);
+	this.click(stop);
+	max = rows().length;
+	var num =data.num;
+	console.log(num);
+	cloning(num);
 
-		var $first = rows().eq(0).clone();
-		container().append($first);
+	function cloning(num)
+	{	
 
-
-		setTimeout(layout, 50);
-		$(window).resize(layout);
-
-		start();
+		for(i=0;i<num;i++)
+		{
+			var $i = rows().eq(i).clone();
+			container().append($i);
+		}
 		
 	}
+	setTimeout(layout(), 500);
+	$(window).resize(layout());
+	start(); 
+
 	function createIndicators()
 	{
 		var $ul = $("<ul class='indicators' />");
@@ -44,21 +53,25 @@
 	}
 
 	function start()
-	{
+	{	
+		
 		timer = setInterval(timerNext, 8000);
+		console.log(timer);
 	}
 
 	function container()
-	{
-		return $(".view-home-slider .view-content");
+	{	
+
+		return ele.find(".view-content");
 	}
 	function rows()
-	{
+	{	
+	
 		return container().find(".views-row");
 	}
 	function indicators()
 	{
-		return $(".view-home-slider .indicators li");
+		return $(".view-nightingale-banner-slider .indicators li");
 	}
 
 	function layout()
@@ -76,11 +89,12 @@
 		container().stop(false, false).animate({"left":left},1500);
 		setActiveIndicator(active);
 	}
-	function jumpToEnd()
+	function jumpToEnd(num)
 	{
-		var active = rows().length-rowsPerPage();
+		var active = rows().length-rowsPerPage(num);
 		var left = "-" + (active*rowWidth()) + "%";
 		container().css({"left":left});
+		console.log(active);
 	}
 	function jumpToBeginning()
 	{
@@ -90,9 +104,9 @@
 	}
 	function rowWidth()
 	{
-		return 100/rowsPerPage();
+		return 100/rowsPerPage(num);
 	}
-	function rowsPerPage()
+	function rowsPerPage(num)
 	{
 		if (isMobile())
 		{
@@ -103,7 +117,7 @@
 			return 1;
 		}
 		
-		return 1;
+		return num;
 	}
 
 	function isMobile()
@@ -116,12 +130,12 @@
 		return $(window).width() < 1220;
 	}
 
-	function previous()
+	function previous(num)
 	{
 		active--;
 		if (active < min)
 		{
-			jumpToEnd();
+			jumpToEnd(num);
 			active = max-1;
 		}
 		moveContainer();
@@ -144,9 +158,9 @@
 		moveContainer();
 	}
 
-	function clickPrevious()
+	function clickPrevious(num)
 	{
-		previous();
+		previous(num);
 		stop();
 		return false;
 	}
@@ -186,6 +200,16 @@
 		layout();
 	}
 
+	};
 
+	$(function()
+	{		
+		$(".view-home-slider").slider({num: 1});
+		$(".view-facility-slider").slider({num: 1});
+		$(".view-testimonials-view").slider({num: 1});
+		$('.view-facility-page .views-row a').swipebox();
+
+	});
+	
 
 }(jQuery));

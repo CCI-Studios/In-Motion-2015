@@ -11,6 +11,11 @@
 		}
 	}
 
+	h1
+	{
+		font-size: 2.4em;
+	}
+
 	#main-menu
 	{
 		padding-top: 45px;
@@ -37,18 +42,59 @@
 	
 }
 
-@media screen and (min-width:1081px)
+@media screen and (min-width:1101px)
 {
 	#main-menu
 	{
 		height: auto!important;
 	}	
 }
-@media screen and (max-width:1080px)
+@media screen and (max-width:1100px)
 {	
 	.view-facility-page
 	{	
 		text-align: center;
+	}
+
+	.team-name,
+	.team-position,
+	.team-body,
+	.views-field-name,
+	#block-block-3,
+	.block-imageblock
+	h2
+	{	
+		color:white;
+		text-shadow:1px 1px 1px rgba(0,0,0,0.3);
+	}
+
+	#footer2
+	{	
+		.content > ul > li
+		{
+			width:28%;
+		}
+
+		li.expanded:nth-child(3)
+		{
+			& > a
+			{
+				margin-right: 0px;
+			}
+		}
+
+		li.expanded:first-child
+		{
+			width: 38%;
+		}
+	}
+	#block-views-testimonials-view-block
+	{
+		.view-footer,
+		.view-header
+		{
+			bottom:-14px;
+		}
 	}
 
 	#menus
@@ -64,6 +110,8 @@
 		-webkit-transition:transform 0.5s;
 		-moz-transition:transform 0.5s;
 	}
+
+
 
 	.view-header, 
 	.view-footer
@@ -143,10 +191,13 @@
 		display: none;
 	}
 
-	.page-services .content-inner
-	{
-		width: 100%;
-		float: none;
+	.page-services 
+	{	
+		.content-inner
+		{
+			width: 100%;
+			float: none;
+		}
 	}
 
 	.view-home-services-block .views-row
@@ -155,6 +206,7 @@
 		float: none;
 		width:100%;
 		border-bottom:2px solid white;
+		overflow:hidden;
 
 		.views-field-name
 		{
@@ -176,16 +228,21 @@
 	{
 		display: none;
 	}
+
 	#block-block-10
 	{
 		display: block;
-		max-width: 70px;
-		margin: 0 auto;
+		padding-top: 10px;
 		position: absolute;
-		top: 10px;
-		left:30px;
-		z-index: 99;
-		text-align: center;
+		z-index: 999;
+		top: 0px;
+		padding-left: 30px;
+		z-index: 999999;
+
+		p
+		{
+			padding-bottom:0px;
+		}
 	}
 
 
@@ -201,8 +258,10 @@
 	}
 
 	#header
-	{
+	{	
+		position: fixed;
 		background:rgba(0,0,0,0.9);
+		height: 160px;
 	}
 
 	#menus
@@ -210,12 +269,12 @@
 		position: absolute;
 		top:0px;
 		float: none;
+		width:250px;
 
 		li
 		{
 			display: block;
 		}
-
 		a
 		{
 			padding:20px!important;
@@ -252,17 +311,24 @@
 		position: relative;
 		right: 0;
 		padding-top: 50px;
-		overflow: hidden;
+		overflow: auto;
 		background:black;
 		width: 100%;
 
 
-	#patient-form,
-	#contact,
-	.fb
-	{
-		display: block;
-	}
+		#patient-form,
+		#contact,
+		.fb,
+		#motion-news
+		{
+			display: block;
+		}
+
+		ul.menu
+		{
+			height: 100%;
+		}
+
 
 	}
 	#main-menu > ul.menu li.expanded ul.menu
@@ -308,8 +374,17 @@
 				z-index: 1;
 				top:0;
 				width: 100%;
+				height: 100%;
+				padding-bottom:100px;
 		}
 		
+	}
+
+	#block-block-10.open
+	{	
+		width: 200px;
+		transition: transform(width,0.2);
+		background:rgba(0,0,0,0.9);
 	}
 
 	#footer p,#footer span
@@ -319,13 +394,7 @@
 
 	#footer2 li.expanded > ul a
 	{
-		width:120px;
 		padding: 10px 0px;
-	}
-
-	#footer2 .content > ul > li
-	{
-		width:30%;
 	}
 
 	.menu-footer-menu
@@ -335,16 +404,22 @@
 
 	#block-menu-menu-client-resources-menu
 	{
-		background-position:center;
 		padding:250px 0 100px;
+	}
 
-
-		ul.menu
+	#block-menu-menu-client-resources-menu,
+	#block-views-services-menu-inner-block
+	{
+		background-position:center;
+		
+		ul.menu,
+		.view-content
 		{
 			width: 300px;
 			margin: 0 auto;
 
-			li
+			li,
+			.views-row
 			{
 				border-right:0px;
 				padding:10px;
@@ -390,10 +465,78 @@
 		}
 	}
 
+	.page-our-team
+	{
+		#content
+		{
+			margin-top: 220px;
+		}
+	}
+
+	#header-image
+	{	
+	
+		#page-title
+		{
+			
+			font-size: 1.8em;
+			
+		}
+	}
 }
 
 @media screen and (max-width:767px)
 {	
+
+	#header-image
+	{	
+		height: 300px;
+		.backbg
+		{
+			min-height: 300px;
+			height: 300px;
+		}
+		#page-title
+		{
+			top:50%;
+			font-size: 1.8em;
+			
+		}
+	}
+
+	.page-services
+	{
+		.block-imageblock
+		{
+			padding-top:100px;
+		}
+	}
+	
+	.page-node-25 .block-imageblock,
+	.block-imageblock
+	{
+		padding: 100px 0px;
+	}
+	.page-testimonials .block-imageblock .backbg
+	{
+		background-position:center;
+	}
+
+	#block-block-1
+	{
+		margin-top:0px;
+
+		img
+		{
+			padding-top:50px;
+		}
+	}
+
+	#banner
+	{
+		padding-top:160px;
+	}
+
 	#block-imageblock-5 .icon
 	{
 		padding:10px;
@@ -413,6 +556,30 @@
 		}
 	}
 
+	#block-block-3
+	{
+		margin-top:70px;
+
+		.button
+		{
+			margin-top:20px;
+		}
+
+		h2
+		{
+			font-size: 24px;
+		}
+	}
+
+	#block-views-home-slider-block
+	{
+		.view-footer,
+		.view-header
+		{
+			bottom:-10px;
+		}
+	}
+
 	input, select, textarea, button
 	{
 		width:300px;
@@ -429,10 +596,6 @@
 		border-bottom:2px solid white;
 	}
 
-	.page-node-25 .block-imageblock
-	{
-		padding:200px 0 80px;
-	}
 	.view-team-description
 	{
 		.view-footer,
@@ -470,7 +633,10 @@
 
 	#footer2 
 	{	
-
+		li.expanded:first-child
+		{
+			width: 100%;
+		}
 		li.expanded > ul a
 		{
 			width:100%;
@@ -541,10 +707,40 @@
 	{
 		margin-bottom: 0px;
 	}
+
+	#block-block-3
+	{
+		margin-top: 0px;
+	}
+
+	.backbg
+	{
+		min-height: 650px;
+	}
+
+	#block-menu-menu-client-resources-menu
+	{
+		padding:50px 0px;
+	}
+	.page-node-25 .block-imageblock
+	{
+		padding:50px 0px;
+	}
+
+	.view-client-resources .views-field-title
+	{
+		padding-bottom:60px;
+	}
+	.page-our-team #content
+	{
+		margin-top: 60px;
+	}
 }
 
 @media screen and (max-width:480px)
 {	
+
+
 	.view-facility-page
 	{	
 		text-align:center;
@@ -561,6 +757,12 @@
 			}
 		}
 	}
+
+	#block-block-8 .content
+	{
+		padding: 0 10px;
+	}
+
 	input, select, textarea, button 
 	{
 		width: 260px;
@@ -592,6 +794,7 @@
 	.view-our-team .views-row
 	{
 		width:250px;
+		padding:30px 0px;
 	}
 
 	.view-facility-slider .backbg,
@@ -614,13 +817,6 @@
 		padding:0 5px;
 	}
 
-
-
-	.page-node-25 .block-imageblock
-	{
-		padding-bottom:35px;
-	}
-
 	#footer span
 	{
 		display: inline-block;
@@ -629,6 +825,7 @@
 	#block-block-5,
 	#block-views-testimonials-view-block
 	{
-		padding:75px 5px;
+		padding:75px 10px;
+		width:93%;
 	}
 }

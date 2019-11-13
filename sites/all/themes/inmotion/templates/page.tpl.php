@@ -110,16 +110,24 @@
               <div id="banner">
                   <?php print render($page['banner']); ?>
               </div>  
+             <?php if(isset($node->field_image_header)){ ?>
+           <div id="header-image">
+              <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?> <?php 
                
-             
-               <?php if(arg(0)=='services'):?>
-               <div id="services-block-inner">
+         $field = field_get_items('node', $node, 'field_image_header');
+         $bannerImage = field_view_value('node', $node, 'field_image_header', $field[0]);
+         print render($bannerImage); ?>
+         </div>
+
+    <?php   }   ?>            
+              <?php if(arg(0)=='services'):?>
+            <!-- <div id="services-block-inner">
                   
-                          <?php
+              <?php
                         
-                           print views_embed_view('home_services_block','block');
-                    ?>
-                    </div>
+                   print views_embed_view('home_services_block','block');
+              ?>
+                </div> -->
                   <?php endif ?>
               <div id="content">
                  <?php if ($page['sidebar']): ?>
@@ -135,12 +143,13 @@
                   <div>
                       <a id="main-content"></a>
                       <?php print render($title_prefix); ?>
-                      <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
+                     
                       <?php print render($title_suffix); ?>
                       <?php print $messages; ?>
                       <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
                       <?php print render($page['help']); ?>
                       <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+                      <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
                       <?php print render($page['content']); ?>
                  </div>
                </div>

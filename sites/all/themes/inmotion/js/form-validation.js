@@ -36,9 +36,12 @@
 			 $('#block-webform-client-block-26,#block-webform-client-block-24').append(div);
 			 return false;
 		 }
-		
-			console.log('true');
+		 else
+		 {
+		 	console.log('true');
 			return true;
+		 }
+	
 		}
 	});
 

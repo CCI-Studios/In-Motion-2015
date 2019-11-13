@@ -13,7 +13,8 @@ input, select, textarea, button {
   src: url(../Fonts/ufonts.com_century-gothic.ttf); }
 body {
   font-family: 'CenturyGothic',sans-serif;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 p {
   padding-bottom: 10px;
@@ -29,9 +30,8 @@ a {
   a:hover {
     text-decoration: underline;
     color: #ca190d; }
-
-.active {
-  color: #ca190d !important; }
+  a.active {
+    color: #ca190d; }
 
 hr {
   display: inline-block;
@@ -43,6 +43,26 @@ hr {
   border: 0px;
   border-bottom: 1px solid black;
   margin-bottom: 20px; }
+
+#header-image {
+  position: relative;
+  height: 500px;
+  overflow: hidden; }
+  #header-image #page-title {
+    position: absolute;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -moz-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    top: 60%;
+    left: 50%;
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center; }
+  #header-image .backbg {
+    height: 500px;
+    box-shadow: 1000px 1000px 200px rgba(0, 0, 0, 0.6) inset; }
 
 h1 {
   font-size: 40px;
@@ -73,7 +93,7 @@ h3 {
 #header {
   background: rgba(0, 0, 0, 0.6);
   position: absolute;
-  z-index: 999;
+  z-index: 99;
   width: 100%; }
 
 .page-our-team #header {
@@ -104,6 +124,12 @@ ul.menu,
   #footer2 .content ul a {
     color: white;
     font-weight: 100; }
+    ul.menu a.active,
+    #footer2 .content ul a.active {
+      color: #ca190d; }
+  ul.menu #patient-form.active,
+  #footer2 .content ul #patient-form.active {
+    color: white; }
   ul.menu a:hover,
   #footer2 .content ul a:hover {
     text-decoration: none; }
@@ -116,7 +142,7 @@ ul.menu,
     color: transparent; }
 
 #top-menu {
-  font-size: 12px; }
+  font-size: 14px; }
   #top-menu a {
     border-left: 1px solid white;
     padding: 0 10px; }
@@ -126,9 +152,12 @@ ul.menu,
   #top-menu ul.menu {
     text-align: right; }
 
+a#patient-form.active {
+  color: white; }
+
 #main-menu {
   font-size: 18px;
-  padding-top: 72px;
+  padding-top: 70px;
   z-index: 999; }
   #main-menu a {
     text-transform: uppercase;
@@ -136,7 +165,8 @@ ul.menu,
     padding: 0px 15px 15px; }
   #main-menu #patient-form,
   #main-menu #contact,
-  #main-menu .fb {
+  #main-menu .fb,
+  #main-menu #motion-news {
     display: none; }
   #main-menu li.expanded ul.menu a {
     padding: 7px 30px; }
@@ -185,9 +215,9 @@ ul.menu,
   overflow: hidden; }
 
 .backbg {
-  height: 820px;
+  height: 750px;
   background-repeat: no-repeat;
-  -ms-behavior: url("/sites/all/themes/inmotion/css/backgroundsize.min.htc");
+  -ms-behavior: url("/sites/all/themes/inmotion/js/backgroundsize.min.htc");
   background-size: cover;
   background-position: center;
   background-position: center top; }
@@ -203,9 +233,12 @@ ul.menu,
   width: 30px; }
   #fb:hover,
   .fb:hover {
-    color: transparent; }
+    color: transparent;
+    background: url("../images/fb-red.png") no-repeat;
+    background-position: top; }
 
-a.button {
+a.button,
+.form-submit {
   border-radius: 50px;
   background: #b11409;
   display: inline-block;
@@ -213,8 +246,10 @@ a.button {
   padding: 13px 60px;
   text-shadow: none;
   text-transform: uppercase;
-  font-weight: 700; }
-  a.button:hover {
+  font-weight: 700;
+  -webkit-appearance: none; }
+  a.button:hover,
+  .form-submit:hover {
     text-decoration: none;
     background: #ca190d; }
 
@@ -227,10 +262,9 @@ a.button {
   position: absolute;
   text-align: center;
   top: 50%;
-  margin-top: 100px;
+  margin-top: 85px;
   left: 50%;
   color: white;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   -webkit-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
@@ -256,9 +290,16 @@ a.button {
   width: 70%;
   float: right;
   padding-bottom: 50px; }
+.page-services #page-title {
+  display: none; }
 .page-services .view-home-services-block .views-row div,
 .page-services .view-home-services-block .views-row span {
-  height: 190px; }
+  height: 140px;
+  margin-bottom: -25px; }
+.page-services .block-imageblock .block-body {
+  max-width: 1060px; }
+.page-services .block-imageblock {
+  padding-top: 260px; }
 
 #sidebar {
   float: left;
@@ -269,13 +310,14 @@ a.button {
     border-bottom: 2px solid #ca190d; }
   #sidebar ul li {
     list-style: none;
-    padding: 5px 0px; }
+    padding: 3px 0px; }
   #sidebar li.expanded > a {
     color: #686868;
     font-weight: bold; }
   #sidebar a {
     color: #646464;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-size: 14px; }
 
 #block-taxonomy-menu-block-1 {
   overflow: hidden;
@@ -288,17 +330,18 @@ a.button {
 
 .view-home-services-block {
   border-top: 1px solid white; }
+  .view-home-services-block .backbg {
+    background-position: center center; }
   .view-home-services-block .views-row {
     display: table;
     float: left;
     width: 33.33%;
-    height: 552px;
     position: relative; }
     .view-home-services-block .views-row:first-child {
       border-left: 0px; }
     .view-home-services-block .views-row div, .view-home-services-block .views-row span {
       width: 100%;
-      height: 552px;
+      height: 352px;
       display: table;
       position: relative; }
     .view-home-services-block .views-row a {
@@ -319,13 +362,13 @@ a.button {
       top: 0;
       z-index: -1; }
   .view-home-services-block .views-row-1 {
-    background-size: cover;
-    -ms-behavior: url("/sites/all/themes/inmotion/css/backgroundsize.min.htc"); }
+    -ms-behavior: url("/sites/all/themes/inmotion/js/backgroundsize.min.htc");
+    background-size: cover; }
     .view-home-services-block .views-row-1 a:before {
       background-image: url(../images/pain-icon.png); }
   .view-home-services-block .views-row-2 {
-    background-size: cover;
-    -ms-behavior: url("/sites/all/themes/inmotion/css/backgroundsize.min.htc"); }
+    -ms-behavior: url("/sites/all/themes/inmotion/js/backgroundsize.min.htc");
+    background-size: cover; }
     .view-home-services-block .views-row-2 a:before {
       background-image: url(../images/rehab-icon.png); }
     .view-home-services-block .views-row-2 .views-field-name {
@@ -333,8 +376,8 @@ a.button {
       .view-home-services-block .views-row-2 .views-field-name:before {
         background: #ca190d; }
   .view-home-services-block .views-row-3 {
-    background-size: cover;
-    -ms-behavior: url("/sites/all/themes/inmotion/css/backgroundsize.min.htc"); }
+    -ms-behavior: url("/sites/all/themes/inmotion/js/backgroundsize.min.htc");
+    background-size: cover; }
     .view-home-services-block .views-row-3 a:before {
       background-image: url(../images/injury-icon.png); }
     .view-home-services-block .views-row-3 .backbg {
@@ -351,8 +394,7 @@ a.button {
     .view-home-services-block .views-field-name a {
       font-size: 30px;
       color: white;
-      font-weight: bold;
-      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); }
+      font-weight: bold; }
       .view-home-services-block .views-field-name a:hover {
         text-decoration: none; }
     .view-home-services-block .views-field-name:before {
@@ -366,16 +408,15 @@ a.button {
     .view-home-services-block .views-field-name.active:after {
       content: "";
       width: 0px;
-      position: absolute;
-      bottom: -15px;
+      position: relative;
+      bottom: -40px;
       border-right: 15px solid transparent;
       border-left: 15px solid transparent;
-      border-top: 15px solid #ca190d;
-      left: 50%; }
+      border-top: 15px solid #ca190d; }
 
 #block-block-4 {
   text-align: center;
-  max-width: 865px;
+  max-width: 760px;
   margin: 0 auto;
   padding-top: 40px;
   clear: left;
@@ -389,10 +430,10 @@ a.button {
     border-bottom: 1px solid black; }
 
 #services-block-inner {
-  z-index: 99;
+  z-index: 9;
   padding-bottom: 70px;
   background: white;
-  margin-bottom: 267px; }
+  margin-bottom: 200px; }
 
 #services-symptoms {
   clear: right;
@@ -400,7 +441,7 @@ a.button {
   margin-top: 30px; }
 
 .view-what-your-symptoms {
-  max-width: 1060px;
+  max-width: 860px;
   margin: 0 auto;
   padding: 25px 20px 40px; }
   .view-what-your-symptoms .view-content {
@@ -421,6 +462,8 @@ a.button {
     vertical-align: middle;
     background-repeat: no-repeat;
     background-position: center; }
+  .view-what-your-symptoms .views-field-name {
+    text-shadow: none; }
   .view-what-your-symptoms .views-row {
     clear: left; }
   .view-what-your-symptoms .views-row-1 .field-content a:before {
@@ -445,18 +488,22 @@ a.button {
     content: url(../images/icons/knee-pain.png); }
   .view-what-your-symptoms .views-row-11 .field-content a:before {
     content: url(../images/icons/af-pain.png); }
+  .view-what-your-symptoms .views-row-12 .field-content a:before {
+    content: url(../images/icons/wrist-icon.png); }
   .view-what-your-symptoms a {
     color: black;
     display: table;
     vertical-align: middle;
     width: 200px;
-    padding: 10px 0px;
+    padding: 5px 0px;
     font-weight: bold; }
 
 #block-views-home-slider-block {
   position: relative; }
   #block-views-home-slider-block .backbg {
     box-shadow: 1000px 1000px 200px rgba(0, 0, 0, 0.6) inset; }
+  #block-views-home-slider-block .contextual-links-wrapper {
+    top: 200px; }
 
 .view-home-slider {
   overflow: hidden; }
@@ -521,7 +568,7 @@ a.button {
   .view-facility-slider .backbg,
   .view-team-description .backbg,
   .view-client-resources .backbg {
-    height: 552px; }
+    height: 400px; }
 
 .view-our-team.close {
   height: 0px;
@@ -535,7 +582,8 @@ a.button {
   background: white; }
 
 .view-team-description {
-  border-bottom: 0px; }
+  border-bottom: 0px;
+  color: white; }
   .view-team-description .view-header,
   .view-team-description .view-footer {
     top: 50%; }
@@ -581,9 +629,12 @@ a.button {
 
 .team-name,
 .team-position,
-.team-body {
-  color: white;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); }
+.team-body,
+.views-field-name,
+#block-block-3,
+.block-imageblock,
+h2 {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
 
 .views-field-title,
 .views-field-field-position {
@@ -638,7 +689,8 @@ a.button {
     max-width: 350px;
     margin: 0 auto; }
 
-.views-field-field-name:before,
+.view-testimonials-page .views-field-title:before,
+.view-testimonials-view .views-field-title-1:before,
 .contact:before {
   content: "";
   display: inline-block;
@@ -647,11 +699,18 @@ a.button {
   margin: 20px;
   border-bottom: 1px solid #666666; }
 
+.view-testimonials-page .field-content,
+.view-testimonials-view .field-content {
+  display: block;
+  color: #666666;
+  font-size: 16px;
+  font-weight: 100; }
+
 #block-views-testimonials-view-block,
 #block-block-5 {
   float: left;
   width: 50%;
-  padding: 100px 0px;
+  padding: 50px 0px;
   min-height: 400px;
   text-align: center; }
   #block-views-testimonials-view-block h2:before,
@@ -668,7 +727,8 @@ a.button {
 
 #block-block-5 {
   color: white;
-  background: black; }
+  background: black;
+  cursor: pointer; }
   #block-block-5 .content {
     max-width: 350px;
     margin: 0 auto; }
@@ -758,8 +818,10 @@ a.button {
 .not-front .view-home-services-block .views-row {
   height: 175px; }
   .not-front .view-home-services-block .views-row a:before {
-    height: 100px;
-    background-size: 70px; }
+    height: 85px;
+    background-size: 50px; }
+  .not-front .view-home-services-block .views-row .views-field-name a {
+    font-size: 24px; }
 
 .block-imageblock {
   position: relative;
@@ -767,8 +829,7 @@ a.button {
   padding-top: 300px;
   color: white;
   text-align: center;
-  overflow: hidden;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); }
+  overflow: hidden; }
   .block-imageblock .contextual-links-wrapper {
     top: 200px; }
   .block-imageblock h2 {
@@ -790,8 +851,6 @@ a.button {
 
 .page-our-team h1 {
   text-align: center; }
-.page-our-team #content {
-  margin-top: 220px; }
 
 .view-our-team {
   text-align: center; }
@@ -825,8 +884,9 @@ a.button {
 .page-node-25 .tabs {
   display: none; }
 .page-node-25 .block-imageblock {
-  padding: 275px 0px 80px;
-  border-bottom: 2px solid white; }
+  border-bottom: 2px solid white;
+  padding: 50px 0px;
+  padding-top: 220px; }
 .page-node-25 #content {
   margin: 0px; }
 
@@ -851,37 +911,74 @@ a.button {
 #block-menu-menu-client-resources-menu {
   background: url(../images/client.jpg) no-repeat;
   background-position: center -100px;
-  -ms-behavior: url("/sites/all/themes/inmotion/css/backgroundsize.min.htc");
+  -ms-behavior: url("/sites/all/themes/inmotion/js/backgroundsize.min.htc");
   background-size: cover;
   text-align: center;
-  padding: 150px;
+  padding: 150px 50px;
   padding-top: 270px;
   color: white;
   box-shadow: 1000px 1000px 20px rgba(0, 0, 0, 0.6) inset; }
-  #block-menu-menu-client-resources-menu h2 {
-    font-size: 36px;
+  #block-menu-menu-client-resources-menu .contextual-links-wrapper {
+    top: 200px; }
+
+#block-menu-menu-client-resources-menu h2,
+.page-services .block-imageblock h2 {
+  font-size: 36px;
+  color: white;
+  padding-bottom: 20px; }
+  #block-menu-menu-client-resources-menu h2:after,
+  .page-services .block-imageblock h2:after {
+    content: "";
+    display: block;
+    max-width: 150px;
+    margin: 0 auto;
+    margin: 10px auto;
+    margin-top: 20px;
+    border-bottom: 1px solid white;
+    text-align: center; }
+
+#block-menu-menu-client-resources-menu ul.menu,
+#block-menu-menu-client-resources-menu .view-content,
+#block-views-services-menu-inner-block ul.menu,
+#block-views-services-menu-inner-block .view-content {
+  text-align: center;
+  text-transform: uppercase; }
+  #block-menu-menu-client-resources-menu ul.menu a,
+  #block-menu-menu-client-resources-menu .view-content a,
+  #block-views-services-menu-inner-block ul.menu a,
+  #block-views-services-menu-inner-block .view-content a {
+    padding: 15px;
+    font-size: 18px;
     color: white; }
-    #block-menu-menu-client-resources-menu h2:after {
-      content: "";
-      display: block;
-      max-width: 150px;
-      margin: 0 auto;
-      margin: 10px auto;
-      margin-top: 20px;
-      border-bottom: 1px solid white;
-      text-align: center; }
-  #block-menu-menu-client-resources-menu ul.menu {
-    text-align: center;
-    text-transform: uppercase; }
-    #block-menu-menu-client-resources-menu ul.menu a {
-      padding: 15px;
-      font-size: 18px; }
-      #block-menu-menu-client-resources-menu ul.menu a:hover {
-        color: #ca190d; }
-    #block-menu-menu-client-resources-menu ul.menu li {
-      border-right: 1px solid white; }
-      #block-menu-menu-client-resources-menu ul.menu li:last-child {
-        border-right: 0px; }
+    #block-menu-menu-client-resources-menu ul.menu a:hover, #block-menu-menu-client-resources-menu ul.menu a.active,
+    #block-menu-menu-client-resources-menu .view-content a:hover,
+    #block-menu-menu-client-resources-menu .view-content a.active,
+    #block-views-services-menu-inner-block ul.menu a:hover,
+    #block-views-services-menu-inner-block ul.menu a.active,
+    #block-views-services-menu-inner-block .view-content a:hover,
+    #block-views-services-menu-inner-block .view-content a.active {
+      color: #ca190d;
+      outline: none; }
+  #block-menu-menu-client-resources-menu ul.menu li,
+  #block-menu-menu-client-resources-menu ul.menu .views-row,
+  #block-menu-menu-client-resources-menu .view-content li,
+  #block-menu-menu-client-resources-menu .view-content .views-row,
+  #block-views-services-menu-inner-block ul.menu li,
+  #block-views-services-menu-inner-block ul.menu .views-row,
+  #block-views-services-menu-inner-block .view-content li,
+  #block-views-services-menu-inner-block .view-content .views-row {
+    border-right: 1px solid white;
+    margin: 10px 0px;
+    display: inline-block; }
+    #block-menu-menu-client-resources-menu ul.menu li:last-child,
+    #block-menu-menu-client-resources-menu ul.menu .views-row:last-child,
+    #block-menu-menu-client-resources-menu .view-content li:last-child,
+    #block-menu-menu-client-resources-menu .view-content .views-row:last-child,
+    #block-views-services-menu-inner-block ul.menu li:last-child,
+    #block-views-services-menu-inner-block ul.menu .views-row:last-child,
+    #block-views-services-menu-inner-block .view-content li:last-child,
+    #block-views-services-menu-inner-block .view-content .views-row:last-child {
+      border-right: 0px; }
 
 .view-testimonials-page {
   text-align: center; }
@@ -903,6 +1000,8 @@ a.button {
   max-width: 100%;
   margin-top: 0px;
   padding: 0px; }
+.page-testimonials #page-title {
+  display: none; }
 
 input, select, textarea, button {
   padding: 15px;
@@ -928,7 +1027,6 @@ input, select, textarea, button {
   padding: 15px 100px;
   color: white;
   width: 300px;
-  background: #ca190d;
   cursor: pointer; }
 
 #block-webform-client-block-24 {
@@ -959,10 +1057,15 @@ input, select, textarea, button {
       content: url("../images/white-marker.png");
       display: block;
       padding-bottom: 30px; }
+  #block-block-8 a {
+    color: white; }
+    #block-block-8 a:hover {
+      color: white; }
 
 #block-webform-client-block-26 {
   text-align: center;
-  padding: 50px 0px; }
+  padding: 50px 0px;
+  clear: left; }
 
 #block-imageblock-5 .icon {
   display: inline-block;
@@ -1006,7 +1109,10 @@ input, select, textarea, button {
   .view-services .view-content > .item-list > ul > li > .views-field-name {
     font-size: 40px;
     padding-bottom: 20px;
-    color: black; }
+    color: black;
+    margin-top: 40px; }
+  .view-services .view-content > .item-list > ul > li:first-child .views-field-name {
+    margin-top: 0px; }
   .view-services .view-content > .item-list > ul > li > .item-list .views-field-name {
     font-size: 30px;
     color: black;
@@ -1039,12 +1145,27 @@ input, select, textarea, button {
 #error {
   color: #ca190d; }
 
+#site-by-cci p {
+  font-size: 12px; }
+
+#scroll-top-button {
+  position: fixed;
+  bottom: 0px;
+  text-align: right;
+  right: 30px; }
+  #scroll-top-button .button {
+    font-size: 14px;
+    padding: 10px 15px; }
+
 @media screen and (max-width: 1220px) {
   #block-block-1 {
     max-width: 300px; }
     #block-block-1 img {
       width: 300px !important;
       height: 86px !important; }
+
+  h1 {
+    font-size: 2.4em; }
 
   #main-menu {
     padding-top: 45px; }
@@ -1059,12 +1180,33 @@ input, select, textarea, button {
 
   .view-footer {
     right: 50px; } }
-@media screen and (min-width: 1081px) {
+@media screen and (min-width: 1101px) {
   #main-menu {
     height: auto !important; } }
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1100px) {
   .view-facility-page {
     text-align: center; }
+
+  .team-name,
+  .team-position,
+  .team-body,
+  .views-field-name,
+  #block-block-3,
+  .block-imageblock
+  h2 {
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
+
+  #footer2 .content > ul > li {
+    width: 28%; }
+  #footer2 li.expanded:nth-child(3) > a {
+    margin-right: 0px; }
+  #footer2 li.expanded:first-child {
+    width: 38%; }
+
+  #block-views-testimonials-view-block .view-footer,
+  #block-views-testimonials-view-block .view-header {
+    bottom: -14px; }
 
   #menus {
     -webkit-transform: translate(-200%);
@@ -1137,7 +1279,8 @@ input, select, textarea, button {
     height: 240px;
     float: none;
     width: 100%;
-    border-bottom: 2px solid white; }
+    border-bottom: 2px solid white;
+    overflow: hidden; }
     .view-home-services-block .views-row .views-field-name {
       border: 0px; }
 
@@ -1153,13 +1296,14 @@ input, select, textarea, button {
 
   #block-block-10 {
     display: block;
-    max-width: 70px;
-    margin: 0 auto;
+    padding-top: 10px;
     position: absolute;
-    top: 10px;
-    left: 30px;
-    z-index: 99;
-    text-align: center; }
+    z-index: 999;
+    top: 0px;
+    padding-left: 30px;
+    z-index: 999999; }
+    #block-block-10 p {
+      padding-bottom: 0px; }
 
   #menu-mb {
     display: inline-block;
@@ -1171,12 +1315,15 @@ input, select, textarea, button {
     background: url(../images/mobile-menu.png) no-repeat; }
 
   #header {
-    background: rgba(0, 0, 0, 0.9); }
+    position: fixed;
+    background: rgba(0, 0, 0, 0.9);
+    height: 160px; }
 
   #menus {
     position: absolute;
     top: 0px;
-    float: none; }
+    float: none;
+    width: 250px; }
     #menus li {
       display: block; }
     #menus a {
@@ -1198,13 +1345,16 @@ input, select, textarea, button {
     position: relative;
     right: 0;
     padding-top: 50px;
-    overflow: hidden;
+    overflow: auto;
     background: black;
     width: 100%; }
     #main-menu #patient-form,
     #main-menu #contact,
-    #main-menu .fb {
+    #main-menu .fb,
+    #main-menu #motion-news {
       display: block; }
+    #main-menu ul.menu {
+      height: 100%; }
 
   #main-menu > ul.menu li.expanded ul.menu {
     display: block;
@@ -1242,28 +1392,44 @@ input, select, textarea, button {
       -moz-transition: transform 0.5s;
       z-index: 1;
       top: 0;
-      width: 100%; }
+      width: 100%;
+      height: 100%;
+      padding-bottom: 100px; }
+
+  #block-block-10.open {
+    width: 200px;
+    transition: transform(width, 0.2);
+    background: rgba(0, 0, 0, 0.9); }
 
   #footer p, #footer span {
     font-size: 12px; }
 
   #footer2 li.expanded > ul a {
-    width: 120px;
     padding: 10px 0px; }
-
-  #footer2 .content > ul > li {
-    width: 30%; }
 
   .menu-footer-menu {
     margin: 0 auto; }
 
   #block-menu-menu-client-resources-menu {
-    background-position: center;
     padding: 250px 0 100px; }
-    #block-menu-menu-client-resources-menu ul.menu {
+
+  #block-menu-menu-client-resources-menu,
+  #block-views-services-menu-inner-block {
+    background-position: center; }
+    #block-menu-menu-client-resources-menu ul.menu,
+    #block-menu-menu-client-resources-menu .view-content,
+    #block-views-services-menu-inner-block ul.menu,
+    #block-views-services-menu-inner-block .view-content {
       width: 300px;
       margin: 0 auto; }
-      #block-menu-menu-client-resources-menu ul.menu li {
+      #block-menu-menu-client-resources-menu ul.menu li,
+      #block-menu-menu-client-resources-menu ul.menu .views-row,
+      #block-menu-menu-client-resources-menu .view-content li,
+      #block-menu-menu-client-resources-menu .view-content .views-row,
+      #block-views-services-menu-inner-block ul.menu li,
+      #block-views-services-menu-inner-block ul.menu .views-row,
+      #block-views-services-menu-inner-block .view-content li,
+      #block-views-services-menu-inner-block .view-content .views-row {
         border-right: 0px;
         padding: 10px; }
 
@@ -1282,8 +1448,41 @@ input, select, textarea, button {
   .page-testimonials .block-imageblock .backbg {
     background-position: center 100px; }
   .page-testimonials #header {
-    background: rgba(0, 0, 0, 0.9); } }
+    background: rgba(0, 0, 0, 0.9); }
+
+  .page-our-team #content {
+    margin-top: 220px; }
+
+  #header-image #page-title {
+    font-size: 1.8em; } }
 @media screen and (max-width: 767px) {
+  #header-image {
+    height: 300px; }
+    #header-image .backbg {
+      min-height: 300px;
+      height: 300px; }
+    #header-image #page-title {
+      top: 50%;
+      font-size: 1.8em; }
+
+  .page-services .block-imageblock {
+    padding-top: 100px; }
+
+  .page-node-25 .block-imageblock,
+  .block-imageblock {
+    padding: 100px 0px; }
+
+  .page-testimonials .block-imageblock .backbg {
+    background-position: center; }
+
+  #block-block-1 {
+    margin-top: 0px; }
+    #block-block-1 img {
+      padding-top: 50px; }
+
+  #banner {
+    padding-top: 160px; }
+
   #block-imageblock-5 .icon {
     padding: 10px;
     width: 150px;
@@ -1295,6 +1494,17 @@ input, select, textarea, button {
     #block-imageblock-5 .icon .email:before {
       background-size: 50%; }
 
+  #block-block-3 {
+    margin-top: 70px; }
+    #block-block-3 .button {
+      margin-top: 20px; }
+    #block-block-3 h2 {
+      font-size: 24px; }
+
+  #block-views-home-slider-block .view-footer,
+  #block-views-home-slider-block .view-header {
+    bottom: -10px; }
+
   input, select, textarea, button {
     width: 300px; }
 
@@ -1304,9 +1514,6 @@ input, select, textarea, button {
 
   #block-block-7 {
     border-bottom: 2px solid white; }
-
-  .page-node-25 .block-imageblock {
-    padding: 200px 0 80px; }
 
   .view-team-description .view-footer,
   .view-team-description .view-header {
@@ -1324,6 +1531,8 @@ input, select, textarea, button {
   .view-our-team .views-field-field-image-team img {
     width: 200px; }
 
+  #footer2 li.expanded:first-child {
+    width: 100%; }
   #footer2 li.expanded > ul a {
     width: 100%; }
   #footer2 .content > ul > li {
@@ -1360,7 +1569,25 @@ input, select, textarea, button {
     padding-bottom: 70px; }
 
   #block-views-testimonials-view-block {
-    margin-bottom: 0px; } }
+    margin-bottom: 0px; }
+
+  #block-block-3 {
+    margin-top: 0px; }
+
+  .backbg {
+    min-height: 650px; }
+
+  #block-menu-menu-client-resources-menu {
+    padding: 50px 0px; }
+
+  .page-node-25 .block-imageblock {
+    padding: 50px 0px; }
+
+  .view-client-resources .views-field-title {
+    padding-bottom: 60px; }
+
+  .page-our-team #content {
+    margin-top: 60px; } }
 @media screen and (max-width: 480px) {
   .view-facility-page {
     text-align: center; }
@@ -1370,6 +1597,9 @@ input, select, textarea, button {
       .view-facility-page .views-row img {
         width: 250px;
         height: auto; }
+
+  #block-block-8 .content {
+    padding: 0 10px; }
 
   input, select, textarea, button {
     width: 260px; }
@@ -1389,7 +1619,8 @@ input, select, textarea, button {
     height: auto; }
 
   .view-our-team .views-row {
-    width: 250px; }
+    width: 250px;
+    padding: 30px 0px; }
 
   .view-facility-slider .backbg,
   .view-team-description .backbg,
@@ -1402,12 +1633,10 @@ input, select, textarea, button {
   .block-imageblock .block-body {
     padding: 0 5px; }
 
-  .page-node-25 .block-imageblock {
-    padding-bottom: 35px; }
-
   #footer span {
     display: inline-block; }
 
   #block-block-5,
   #block-views-testimonials-view-block {
-    padding: 75px 5px; } }
+    padding: 75px 10px;
+    width: 93%; } }

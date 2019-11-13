@@ -40,7 +40,6 @@
 	
 		setTimeout(layout, 50);
 		$(window).resize(layout);
-		console.log(window.location.hash);
 		
 	}
 	
@@ -180,11 +179,20 @@
 	function clickIndicator(i)
 	{
 		
-
 		setActiveIndicator(i);
 		gotoIndex(i);
-		$("html, body").animate({ scrollTop: 0 }, "slow");
-		return false;
+		if($(window).width()<1080)
+		{
+			$("html, body").animate({ scrollTop: 0 }, 0);
+			return false;
+
+		}
+		else
+		{
+			$("html, body").animate({ scrollTop: 200 }, 0);
+			return false;
+		}
+		
 		stop();
 	}
 
