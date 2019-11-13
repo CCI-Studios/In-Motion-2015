@@ -1164,6 +1164,85 @@ input, select, textarea, button {
     font-size: 14px;
     padding: 10px 15px; }
 
+.page-blog #content {
+  padding: 0;
+  max-width: none; }
+
+.view-blog {
+  max-width: 1320px;
+  margin: 0 auto; }
+  .view-blog .views-row {
+    float: left;
+    width: 300px;
+    height: 220px;
+    margin: 0 15px 30px 15px;
+    position: relative; }
+    .view-blog .views-row:hover .content > div {
+      display: none; }
+  .view-blog .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); }
+    .view-blog .content:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: 0.4; }
+    .view-blog .content > div {
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1; }
+  .view-blog .views-field-title {
+    color: white;
+    font-weight: bold;
+    text-shadow: inherit;
+    text-transform: none;
+    font-size: 24px;
+    margin-bottom: 10px; }
+  .view-blog .views-field-path a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    color: white;
+    text-decoration: none; }
+    .view-blog .views-field-path a span {
+      display: none;
+      position: absolute;
+      left: 25px;
+      right: 25px;
+      top: 50%;
+      margin-top: -26px;
+      height: 50px;
+      line-height: 50px;
+      border: 1px solid white;
+      border-radius: 26px;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: bold; }
+    .view-blog .views-field-path a:hover {
+      background-color: rgba(255, 0, 0, 0.6); }
+      .view-blog .views-field-path a:hover span {
+        display: block; }
+
 @media screen and (max-width: 1220px) {
   #block-block-1 {
     max-width: 300px; }
