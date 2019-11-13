@@ -36,7 +36,11 @@ function taxonomy_title_tokens($type, $tokens, array $data = array(), array $opt
             $replacements[$original] = ($sanitize) ? check_plain($title) : $title;
           }
           else {
-            $replacements[$original] = $term->name;
+            $name = $term->name;
+            if (function_exists('i18n_taxonomy_term_name')) {
+              $name = i18n_taxonomy_term_name($term);
+            }
+            $replacements[$original] = $sanitize ? check_plain($name) : $name;
           }
           break;
       }

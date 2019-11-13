@@ -12,15 +12,15 @@ function theme_taxonomy_title_admin_settings($variables) {
 
   if (!module_exists('page_title') && !module_exists('metatag')) {
     $title_head = t('Affect title tag');
-    dpm('here');
-  } 
+  }
   else {
     $title_head = t('Affect title tag *');
   }
 
   $header = array(
-    t('Terms in vocabulary'), 
-    array('data' => t('Affect Heading tag'), 'class' => 'checkbox'), 
+    t('Terms in vocabulary'),
+    t('Global default value'),
+    array('data' => t('Affect Heading tag'), 'class' => 'checkbox'),
     array('data' => $title_head, 'class' => 'checkbox'),
   );
 
@@ -28,10 +28,12 @@ function theme_taxonomy_title_admin_settings($variables) {
   foreach($form['taxonomy_title_page_titles']['#options'] as $vid => $name) {
     $row = array();
     $row[] = check_plain($name);
+    $row[] = drupal_render($form['taxonomy_title_default_' . $vid]);
     unset($form['taxonomy_title_headings'][$vid]['#title']);
     $row[] = array('data' => drupal_render($form['taxonomy_title_headings'][$vid]), 'class' => 'checkbox');
     unset($form['taxonomy_title_page_titles'][$vid]['#title']);
     $row[] = array('data' => drupal_render($form['taxonomy_title_page_titles'][$vid]), 'class' => 'checkbox');
+
     $rows[] = $row;
   }
 
@@ -42,7 +44,12 @@ function theme_taxonomy_title_admin_settings($variables) {
   $title_path = drupal_get_path('module', 'taxonomy_title') . '/includes/' . 'title.png';
   $title_example = theme('image', array('path' => $title_path));
 
-  $rows[] = array(t('Example'), array('data' => $heading_example, 'class' => 'checkbox'), array('data' => $title_example, 'class' => 'checkbox'));
+  $rows[] = array(
+    t('Example'),
+    array('data' => ''),
+    array('data' => $heading_example, 'class' => 'checkbox'),
+    array('data' => $title_example, 'class' => 'checkbox'),
+  );
 
   // Create the table inside the form.
   $form['settings'] = array(

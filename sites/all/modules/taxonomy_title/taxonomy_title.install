@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * @file
  * Database set up and clean-up for taxonomy title module.
@@ -22,7 +22,6 @@ function taxonomy_title_schema() {
     'fields' => array(
       'tid' => array(
         'type' => 'int',
-        'length' => '11',
         'unsigned' => TRUE,
         'default' => 0,
         'not null' => TRUE,
@@ -38,4 +37,17 @@ function taxonomy_title_schema() {
   );
 
   return $schema;
+}
+
+/**
+ * Implements hook_update_N(). Remove length from tid field in database.
+ */
+function taxonomy_title_update_7001() {
+  $spec = array(
+    'type' => 'int',
+    'unsigned' => TRUE,
+    'default' => 0,
+    'not null' => TRUE,
+  );
+  db_change_field('taxonomy_title', 'tid', 'tid', $spec);
 }
