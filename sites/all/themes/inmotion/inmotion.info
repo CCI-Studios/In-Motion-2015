@@ -15,7 +15,6 @@ scripts[] = js/form-validation.js
 scripts[] = swipebox-master/js/jquery.swipebox.js
 
 
-stylesheets[all][] = stylesheets/screen.css
 stylesheets[all][] = css/screen.css
 stylesheets[all][] = swipebox-master/css/swipebox.min.css
 
