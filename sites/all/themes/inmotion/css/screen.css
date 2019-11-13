@@ -11,6 +11,7 @@ input, select, textarea, button {
 @font-face {
   font-family: 'CenturyGothic';
   src: url(../Fonts/ufonts.com_century-gothic.ttf); }
+
 body {
   font-family: 'CenturyGothic',sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -290,14 +291,18 @@ a.button,
   width: 70%;
   float: right;
   padding-bottom: 50px; }
+
 .page-services #page-title {
   display: none; }
+
 .page-services .view-home-services-block .views-row div,
 .page-services .view-home-services-block .views-row span {
   height: 140px;
   margin-bottom: -25px; }
+
 .page-services .block-imageblock .block-body {
   max-width: 1060px; }
+
 .page-services .block-imageblock {
   padding-top: 260px; }
 
@@ -769,8 +774,6 @@ h2 {
       width: 100%; }
   #footer2 .content > ul > li.expanded a:hover {
     text-decoration: underline; }
-  #footer2 .content > ul > li.expanded:nth-child(3) > ul {
-    border-right: 0px; }
   #footer2 li.expanded ul {
     padding-left: 10px; }
     #footer2 li.expanded ul li.expanded ul li a:before {
@@ -790,17 +793,11 @@ h2 {
     float: left;
     padding-right: 20px;
     overflow: auto;
-    width: 31%; }
+    width: 25%;
+    box-sizing: border-box; }
     #footer2 .content > ul > li:last-child {
-      padding-right: 0px;
-      display: none; }
-    #footer2 .content > ul > li:first-child > ul {
-      -webkit-column-count: 2;
-      -moz-column-count: 2;
-      -ms-column-count: 2;
-      column-count: 2; }
-    #footer2 .content > ul > li:nth-child(3) {
-      padding-right: 0px; }
+      clear: left;
+      margin-top: 30px; }
     #footer2 .content > ul > li > a {
       font-weight: bold;
       border-bottom: 2px solid white;
@@ -883,10 +880,12 @@ h2 {
 
 .page-node-25 .tabs {
   display: none; }
+
 .page-node-25 .block-imageblock {
   border-bottom: 2px solid white;
   padding: 50px 0px;
   padding-top: 220px; }
+
 .page-node-25 #content {
   margin: 0px; }
 
@@ -1000,6 +999,7 @@ h2 {
   max-width: 100%;
   margin-top: 0px;
   padding: 0px; }
+
 .page-testimonials #page-title {
   display: none; }
 
@@ -1072,6 +1072,7 @@ input, select, textarea, button {
   padding: 30px 20px; }
   #block-imageblock-5 .icon a {
     color: white; }
+
 #block-imageblock-5 span:before,
 #block-imageblock-5 .phone:before,
 #block-imageblock-5 .fax:before,
@@ -1084,16 +1085,21 @@ input, select, textarea, button {
   margin: 0 auto;
   background-repeat: no-repeat;
   background-position: center; }
+
 #block-imageblock-5 span {
   display: block; }
+
 #block-imageblock-5 .phone:before {
   background-image: url(../images/phone.png); }
+
 #block-imageblock-5 .fax:before {
   background-image: url(../images/fax.png); }
+
 #block-imageblock-5 .email:before {
   background-image: url(../images/email.png);
   display: block;
   background-position: center; }
+
 #block-imageblock-5 .facebook:before {
   background-image: url(../images/facebook.png);
   display: block;
@@ -1103,6 +1109,7 @@ input, select, textarea, button {
 .view-services .view-content .item-list ul {
   margin: 0px;
   list-style: none; }
+
 .view-services .view-content > .item-list > ul > li {
   list-style: none;
   margin: 0px; }
@@ -1163,51 +1170,38 @@ input, select, textarea, button {
     #block-block-1 img {
       width: 300px !important;
       height: 86px !important; }
-
   h1 {
     font-size: 2.4em; }
-
   #main-menu {
     padding-top: 45px; }
-
   #banner h2,
   .view-client-resources .views-field-title,
   h2 {
     font-size: 1.8em; }
-
   .view-header {
     left: 50px; }
-
   .view-footer {
     right: 50px; } }
+
 @media screen and (min-width: 1101px) {
   #main-menu {
     height: auto !important; } }
+
 @media screen and (max-width: 1100px) {
   .view-facility-page {
     text-align: center; }
-
   .team-name,
   .team-position,
   .team-body,
   .views-field-name,
   #block-block-3,
   .block-imageblock
-  h2 {
+h2 {
     color: white;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
-
-  #footer2 .content > ul > li {
-    width: 28%; }
-  #footer2 li.expanded:nth-child(3) > a {
-    margin-right: 0px; }
-  #footer2 li.expanded:first-child {
-    width: 38%; }
-
   #block-views-testimonials-view-block .view-footer,
   #block-views-testimonials-view-block .view-header {
     bottom: -14px; }
-
   #menus {
     -webkit-transform: translate(-200%);
     -moz-transform: translate(-200%);
@@ -1215,7 +1209,6 @@ input, select, textarea, button {
     transform: translate(-200%);
     -webkit-transition: transform 0.5s;
     -moz-transition: transform 0.5s; }
-
   #menus.open {
     -webkit-transform: translate(0);
     -moz-transform: translate(0);
@@ -1223,18 +1216,14 @@ input, select, textarea, button {
     transform: translate(0);
     -webkit-transition: transform 0.5s;
     -moz-transition: transform 0.5s; }
-
   .view-header,
   .view-footer {
     top: inherit;
     bottom: 0px; }
-
   .view-header {
     left: 40%; }
-
   .view-footer {
     right: 40%; }
-
   #block-block-1 {
     max-width: 300px;
     margin: 0 auto;
@@ -1243,38 +1232,30 @@ input, select, textarea, button {
     #block-block-1 img {
       width: 297px !important;
       height: 86px !important; }
-
   #block-block-3 {
     width: 90%;
     margin-top: 50px; }
-
   #block-views-newsletter-block,
   #block-webform-client-block-24 {
     float: none;
     text-align: center;
     padding-left: 0px;
     padding-right: 0px; }
-
   #block-views-newsletter-block {
     padding-bottom: 40px; }
-
   .view-home-services-block .views-row div,
   .view-home-services-block .views-row span {
     height: 240px; }
-
   .view-team-description .view-footer {
     right: 50px; }
   .view-team-description .view-header {
     left: 50px; }
-
   #services-block-inner,
   #sidebar {
     display: none; }
-
   .page-services .content-inner {
     width: 100%;
     float: none; }
-
   .view-home-services-block .views-row {
     height: 240px;
     float: none;
@@ -1283,17 +1264,13 @@ input, select, textarea, button {
     overflow: hidden; }
     .view-home-services-block .views-row .views-field-name {
       border: 0px; }
-
   #page-wrapper {
     overflow: hidden;
     position: relative; }
-
   .header-inner {
     padding: 0px; }
-
   #top-menu {
     display: none; }
-
   #block-block-10 {
     display: block;
     padding-top: 10px;
@@ -1304,7 +1281,6 @@ input, select, textarea, button {
     z-index: 999999; }
     #block-block-10 p {
       padding-bottom: 0px; }
-
   #menu-mb {
     display: inline-block;
     width: 30px;
@@ -1313,12 +1289,10 @@ input, select, textarea, button {
     color: transparent;
     padding-right: 10px;
     background: url(../images/mobile-menu.png) no-repeat; }
-
   #header {
     position: fixed;
     background: rgba(0, 0, 0, 0.9);
     height: 160px; }
-
   #menus {
     position: absolute;
     top: 0px;
@@ -1340,7 +1314,6 @@ input, select, textarea, button {
       border-bottom: 0px; }
     #menus li.expanded:hover ul.menu {
       padding: 0px; }
-
   #main-menu {
     position: relative;
     right: 0;
@@ -1355,7 +1328,6 @@ input, select, textarea, button {
       display: block; }
     #main-menu ul.menu {
       height: 100%; }
-
   #main-menu > ul.menu li.expanded ul.menu {
     display: block;
     position: absolute;
@@ -1395,24 +1367,18 @@ input, select, textarea, button {
       width: 100%;
       height: 100%;
       padding-bottom: 100px; }
-
   #block-block-10.open {
     width: 200px;
     transition: transform(width, 0.2);
     background: rgba(0, 0, 0, 0.9); }
-
   #footer p, #footer span {
     font-size: 12px; }
-
   #footer2 li.expanded > ul a {
     padding: 10px 0px; }
-
   .menu-footer-menu {
     margin: 0 auto; }
-
   #block-menu-menu-client-resources-menu {
     padding: 250px 0 100px; }
-
   #block-menu-menu-client-resources-menu,
   #block-views-services-menu-inner-block {
     background-position: center; }
@@ -1432,7 +1398,6 @@ input, select, textarea, button {
       #block-views-services-menu-inner-block .view-content .views-row {
         border-right: 0px;
         padding: 10px; }
-
   #block-views-client-resources-block .view-header,
   #block-views-client-resources-block .view-footer {
     top: 60px;
@@ -1442,19 +1407,17 @@ input, select, textarea, button {
     left: 20px; }
   #block-views-client-resources-block .view-footer {
     right: 20px; }
-
   .page-testimonials .backbg {
     height: 528px; }
   .page-testimonials .block-imageblock .backbg {
     background-position: center 100px; }
   .page-testimonials #header {
     background: rgba(0, 0, 0, 0.9); }
-
   .page-our-team #content {
     margin-top: 220px; }
-
   #header-image #page-title {
     font-size: 1.8em; } }
+
 @media screen and (max-width: 767px) {
   #header-image {
     height: 300px; }
@@ -1464,25 +1427,19 @@ input, select, textarea, button {
     #header-image #page-title {
       top: 50%;
       font-size: 1.8em; }
-
   .page-services .block-imageblock {
     padding-top: 100px; }
-
   .page-node-25 .block-imageblock,
   .block-imageblock {
     padding: 100px 0px; }
-
   .page-testimonials .block-imageblock .backbg {
     background-position: center; }
-
   #block-block-1 {
     margin-top: 0px; }
     #block-block-1 img {
       padding-top: 50px; }
-
   #banner {
     padding-top: 160px; }
-
   #block-imageblock-5 .icon {
     padding: 10px;
     width: 150px;
@@ -1493,28 +1450,22 @@ input, select, textarea, button {
     #block-imageblock-5 .icon .facebook:before,
     #block-imageblock-5 .icon .email:before {
       background-size: 50%; }
-
   #block-block-3 {
     margin-top: 70px; }
     #block-block-3 .button {
       margin-top: 20px; }
     #block-block-3 h2 {
       font-size: 24px; }
-
   #block-views-home-slider-block .view-footer,
   #block-views-home-slider-block .view-header {
     bottom: -10px; }
-
   input, select, textarea, button {
     width: 300px; }
-
   #block-block-7, #block-block-8 {
     width: 100%;
     float: none; }
-
   #block-block-7 {
     border-bottom: 2px solid white; }
-
   .view-team-description .view-footer,
   .view-team-description .view-header {
     top: 42%; }
@@ -1527,10 +1478,8 @@ input, select, textarea, button {
   .view-team-description img {
     bottom: -100px;
     width: 200px !important; }
-
   .view-our-team .views-field-field-image-team img {
     width: 200px; }
-
   #footer2 li.expanded:first-child {
     width: 100%; }
   #footer2 li.expanded > ul a {
@@ -1553,41 +1502,32 @@ input, select, textarea, button {
   #footer2 .content > ul > li.expanded > ul {
     display: none;
     border-right: 0px; }
-
   a.button {
     padding: 13px 30px; }
-
   .view-what-your-symptoms .view-content {
     -webkit-column-count: 1;
     -moz-column-count: 1; }
-
   #block-views-testimonials-view-block,
   #block-block-5 {
     float: none;
     width: 100%;
     padding: 50px 0px;
     padding-bottom: 70px; }
-
   #block-views-testimonials-view-block {
     margin-bottom: 0px; }
-
   #block-block-3 {
     margin-top: 0px; }
-
   .backbg {
     min-height: 650px; }
-
   #block-menu-menu-client-resources-menu {
     padding: 50px 0px; }
-
   .page-node-25 .block-imageblock {
     padding: 50px 0px; }
-
   .view-client-resources .views-field-title {
     padding-bottom: 60px; }
-
   .page-our-team #content {
     margin-top: 60px; } }
+
 @media screen and (max-width: 480px) {
   .view-facility-page {
     text-align: center; }
@@ -1597,45 +1537,33 @@ input, select, textarea, button {
       .view-facility-page .views-row img {
         width: 250px;
         height: auto; }
-
   #block-block-8 .content {
     padding: 0 10px; }
-
   input, select, textarea, button {
     width: 260px; }
-
   #block-block-7 {
     height: 320px; }
-
   #menus {
     width: 100%; }
-
   #block-block-11.overlay, #block-block-12.overlay {
     width: 250px;
     padding: 50px 20px; }
-
   #block-views-newsletter-block img {
     width: 300px;
     height: auto; }
-
   .view-our-team .views-row {
     width: 250px;
     padding: 30px 0px; }
-
   .view-facility-slider .backbg,
   .view-team-description .backbg,
   .view-client-resources .backbg {
     height: 240px; }
-
   #block-imageblock-5 .icon {
     width: 130px; }
-
   .block-imageblock .block-body {
     padding: 0 5px; }
-
   #footer span {
     display: inline-block; }
-
   #block-block-5,
   #block-views-testimonials-view-block {
     padding: 75px 10px;

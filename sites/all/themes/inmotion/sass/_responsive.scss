@@ -68,26 +68,6 @@
 		text-shadow:1px 1px 1px rgba(0,0,0,0.3);
 	}
 
-	#footer2
-	{	
-		.content > ul > li
-		{
-			width:28%;
-		}
-
-		li.expanded:nth-child(3)
-		{
-			& > a
-			{
-				margin-right: 0px;
-			}
-		}
-
-		li.expanded:first-child
-		{
-			width: 38%;
-		}
-	}
 	#block-views-testimonials-view-block
 	{
 		.view-footer,
