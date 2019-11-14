@@ -7,7 +7,7 @@ $aliases['dev'] = array(
 	'remote-user'=> 'staging',
 	'path-aliases'=> array(
 		'%files'=> 'sites/default/files',
-	),
-	'ssh-options'=>'-p 37241'
+		'%drush-script' => '/home/staging/.composer/vendor/bin/drush'
+	)
 );
 
