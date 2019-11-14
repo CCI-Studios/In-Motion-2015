@@ -151,6 +151,8 @@ ul.menu,
   #top-menu a {
     border-left: 1px solid white;
     padding: 0 10px; }
+  #top-menu #fb {
+    border-left: 0; }
   #top-menu li:first-child a,
   #top-menu li:last-child a {
     border-left: 0px; }
@@ -230,17 +232,30 @@ a#patient-form.active {
 #fb,
 .fb {
   display: inline-block;
-  color: transparent;
-  background: url("../images/fb.png") no-repeat;
-  background-position: top;
+  font-size: 0;
+  background: url("../images/fb-grey.svg") no-repeat center center;
+  background-size: contain;
   line-height: 20px;
+  height: 20px;
   vertical-align: middle;
-  width: 30px; }
+  width: 30px;
+  box-sizing: border-box; }
   #fb:hover,
   .fb:hover {
-    color: transparent;
-    background: url("../images/fb-red.png") no-repeat;
-    background-position: top; }
+    background-image: url("../images/fb-red.svg"); }
+
+.ig {
+  display: inline-block;
+  font-size: 0;
+  background: url("../images/ig-grey.svg") no-repeat center center;
+  background-size: contain;
+  line-height: 20px;
+  height: 20px;
+  vertical-align: middle;
+  width: 30px;
+  box-sizing: border-box; }
+  .ig:hover {
+    background-image: url("../images/ig-red.svg"); }
 
 a.button,
 .form-submit {

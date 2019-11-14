@@ -233,6 +233,10 @@ ul.menu,
 		border-left:1px solid white;
 		padding:0 10px;
 	}
+	#fb
+	{
+		border-left: 0;
+	}
 
 	li:first-child a,
 	li:last-child a
@@ -379,18 +383,35 @@ a#patient-form.active
 .fb
 {
 	display:inline-block;
-	color:transparent;
-	background:url('../images/fb.png') no-repeat;
-	background-position:top;
+	font-size: 0;
+	background:url('../images/fb-grey.svg') no-repeat center center;
+	background-size: contain;
 	line-height:20px;
+	height: 20px;
 	vertical-align:middle;
 	width:30px;
+	box-sizing: border-box;
 
 	&:hover
 	{
-		color:transparent;
-		background:url('../images/fb-red.png') no-repeat;
-		background-position:top;
+		background-image:url('../images/fb-red.svg');
+	}
+}
+.ig
+{
+	display:inline-block;
+	font-size: 0;
+	background:url('../images/ig-grey.svg') no-repeat center center;
+	background-size: contain;
+	line-height:20px;
+	height: 20px;
+	vertical-align:middle;
+	width:30px;
+	box-sizing: border-box;
+
+	&:hover
+	{
+		background-image:url('../images/ig-red.svg');
 	}
 }
 
