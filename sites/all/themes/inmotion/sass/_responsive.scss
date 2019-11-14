@@ -1,24 +1,28 @@
+@media screen and (max-width:1300px)
+{
+	#main-menu
+	{
+		padding-top: 45px;
+
+		a
+		{
+			font-size: 16px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+}
+
 @media screen and (max-width:1220px)
 {
 	#block-block-1
 	{
 		max-width: 300px;
-
-		img
-		{
-			width:300px!important;
-			height:86px!important;
-		}
 	}
 
 	h1
 	{
 		font-size: 2.4em;
-	}
-
-	#main-menu
-	{
-		padding-top: 45px;
 	}
 
 	#banner h2,
@@ -110,20 +114,12 @@
 		right: 40%;
 	}
 
-	
-
 	#block-block-1
 	{
 		max-width: 300px;
 		margin: 0 auto;
 		float: none;
-		margin-top: 50px;
-
-		img
-		{
-			width:297px!important;
-			height:86px!important;
-		}
+		padding-top: 50px;
 	}
 
 	#block-block-3
@@ -500,16 +496,6 @@
 	.page-testimonials .block-imageblock .backbg
 	{
 		background-position:center;
-	}
-
-	#block-block-1
-	{
-		margin-top:0px;
-
-		img
-		{
-			padding-top:50px;
-		}
 	}
 
 	#banner

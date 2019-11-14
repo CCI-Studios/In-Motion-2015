@@ -90,6 +90,10 @@ h3 {
   #block-block-1 span {
     display: inline-block;
     color: orange; }
+  #block-block-1 img {
+    display: inline-block;
+    width: 100%;
+    height: auto; }
 
 #header {
   background: rgba(0, 0, 0, 0.6);
@@ -211,7 +215,7 @@ a#patient-form.active {
     padding-right: 0px; }
 
 #main-wrapper {
-  clear: left;
+  clear: both;
   position: relative;
   overflow: hidden; }
 
@@ -1164,13 +1168,30 @@ input, select, textarea, button {
     font-size: 14px;
     padding: 10px 15px; }
 
-.page-blog #content {
+.page-blog #content,
+.node-type-blog-article #content {
   padding: 0;
-  max-width: none; }
+  max-width: none;
+  margin-top: 0; }
+  @media (max-width: 1100px) and (min-width: 769px) {
+    .page-blog #content,
+    .node-type-blog-article #content {
+      margin-top: 160px; } }
+
+.page-blog #page-title,
+.node-type-blog-article #page-title {
+  color: white;
+  text-align: center;
+  margin: 0 0 60px 0;
+  padding: 80px 25px;
+  background: url(../images/bg-blog-header.jpg) no-repeat center center;
+  background-size: cover;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); }
 
 .view-blog {
   max-width: 1320px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  text-align: center; }
   .view-blog .views-row {
     float: left;
     width: 300px;
@@ -1179,6 +1200,10 @@ input, select, textarea, button {
     position: relative; }
     .view-blog .views-row:hover .content > div {
       display: none; }
+    @media (max-width: 640px) {
+      .view-blog .views-row {
+        float: none;
+        display: inline-block; } }
   .view-blog .content {
     position: absolute;
     top: 0;
@@ -1243,16 +1268,60 @@ input, select, textarea, button {
       .view-blog .views-field-path a:hover span {
         display: block; }
 
+.node-blog-article {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 20px; }
+  .node-blog-article h2 {
+    text-shadow: none;
+    font-size: 22px;
+    padding: 0;
+    margin: 15px 0 5px 0; }
+  .node-blog-article .submitted {
+    color: #ca190d;
+    font-weight: bold;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 30px; }
+    .node-blog-article .submitted p {
+      font-size: 15px;
+      padding: 0; }
+
+.prevnext a {
+  display: block;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  background: #ca190d;
+  text-transform: uppercase;
+  width: 220px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 0 auto 10px auto; }
+
+@media (min-width: 480px) {
+  .prevnext__previous {
+    float: left;
+    margin-top: 30px; }
+  .prevnext__next {
+    float: right;
+    margin-top: 30px; } }
+
+@media screen and (max-width: 1300px) {
+  #main-menu {
+    padding-top: 45px; }
+    #main-menu a {
+      font-size: 16px;
+      padding-left: 10px;
+      padding-right: 10px; } }
+
 @media screen and (max-width: 1220px) {
   #block-block-1 {
     max-width: 300px; }
-    #block-block-1 img {
-      width: 300px !important;
-      height: 86px !important; }
   h1 {
     font-size: 2.4em; }
-  #main-menu {
-    padding-top: 45px; }
   #banner h2,
   .view-client-resources .views-field-title,
   h2 {
@@ -1307,10 +1376,7 @@ h2 {
     max-width: 300px;
     margin: 0 auto;
     float: none;
-    margin-top: 50px; }
-    #block-block-1 img {
-      width: 297px !important;
-      height: 86px !important; }
+    padding-top: 50px; }
   #block-block-3 {
     width: 90%;
     margin-top: 50px; }
@@ -1513,10 +1579,6 @@ h2 {
     padding: 100px 0px; }
   .page-testimonials .block-imageblock .backbg {
     background-position: center; }
-  #block-block-1 {
-    margin-top: 0px; }
-    #block-block-1 img {
-      padding-top: 50px; }
   #banner {
     padding-top: 160px; }
   #block-imageblock-5 .icon {

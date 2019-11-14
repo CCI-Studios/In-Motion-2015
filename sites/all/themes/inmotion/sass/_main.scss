@@ -131,6 +131,12 @@ h3
 		display: inline-block;
 		color:orange;
 	}
+	img
+	{
+		display: inline-block;
+		width: 100%;
+		height: auto;
+	}
 }
 
 #header
@@ -354,7 +360,7 @@ a#patient-form.active
 }
 #main-wrapper
 {
-	clear:left;
+	clear:both;
 	position:relative;
 	overflow: hidden;
 }
