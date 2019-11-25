@@ -87,15 +87,13 @@
       <p><?php print_r(date("F j, Y", $node->created)); ?></p>
     </div>
     <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['comments']);
-      hide($content['links']);
-      print render($content);
+      print render($content['body']);
+      print '<div class="actions">';
+      print render($content['prevnext_previous']);
+      print render($content['prevnext_next']);
+      print '<a href="/blog" class="back-button">Back</a>';
+      print '</div>';
     ?>
   </div>
-
-  <?php print render($content['links']); ?>
-
-  <?php print render($content['comments']); ?>
 
 </div>

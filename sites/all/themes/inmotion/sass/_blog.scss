@@ -20,7 +20,7 @@
     color: white;
     text-align: center;
     margin: 0 0 60px 0;
-    padding: 80px 25px;
+    padding: 150px 25px;
     background: url(../images/bg-blog-header.jpg) no-repeat center center;
     background-size: cover;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
@@ -29,17 +29,19 @@
 
 .view-blog
 {
-  max-width: 1320px;
+  max-width: 990px;
   margin: 0 auto;
   text-align: center;
+  font-size: 0;
 
   .views-row
   {
-    float: left;
+    display: inline-block;
     width: 300px;
     height: 220px;
     margin: 0 15px 30px 15px;
     position: relative;
+    font-size: 16px;
 
     &:hover .content > div
     {
@@ -137,6 +139,22 @@
       }
     }
   }
+  .pager-load-more a
+  {
+    font-size: 16px;
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background: #ca190d;
+    text-transform: uppercase;
+    width: 220px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin: 0 auto 10px auto;
+  }
 }
 
 .node-blog-article
@@ -166,6 +184,30 @@
       padding: 0;
     }
   }
+  .actions
+  {
+    text-align: center;
+    padding-top: 30px;
+  }
+  .back-button
+  {
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background: #ca190d;
+    text-transform: uppercase;
+    width: 220px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin: 0 auto 10px auto;
+
+    @media (max-width: 540px) {
+      clear: both;
+    }
+  }
 }
 
 .prevnext a
@@ -183,16 +225,14 @@
   text-decoration: none;
   margin: 0 auto 10px auto;
 }
-@media (min-width: 480px) {
+@media (min-width: 540px) {
   .prevnext__previous
   {
     float: left;
-    margin-top: 30px;
   }
   .prevnext__next
   {
     float: right;
-    margin-top: 30px;
   }
 }
 
